@@ -36,9 +36,10 @@ public class controller {
 
     @PostMapping("/add/employe")
     public Employe saveEmploye(@RequestBody Employe employe){
-        
         return  service.saveEmploye(employe);
     }
+
+    
     @DeleteMapping("/delete/{id}")
     public void deleteEmploye(@PathVariable("id") Long id){
          repository.deleteById(id);
@@ -47,6 +48,7 @@ public class controller {
     public Employe getEmpId(@PathVariable("id") Long id){
         return repository.findById(id).get();
     }
+
     @PutMapping("/employes/{id}")
         public Employe updateEmp(@PathVariable("id") Long id,@RequestBody Employe employe){
             Employe employe2=repository.findById(id).get();

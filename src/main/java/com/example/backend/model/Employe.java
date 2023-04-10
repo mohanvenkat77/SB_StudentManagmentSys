@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
 
 
 @Entity
@@ -11,8 +12,11 @@ public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
     private String firstName;
     private String lastname;
+    // @UniqueConstraint(columnNames = { "emailId" })
     private String emailId;
     public Long getId() {
         return id;

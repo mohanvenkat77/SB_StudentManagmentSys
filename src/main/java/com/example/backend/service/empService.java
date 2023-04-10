@@ -13,6 +13,7 @@ public class empService {
     private repository repository;
 
     public Employe saveEmploye(Employe employe) {
+    
          repository.save(employe);
          return employe;
     }
